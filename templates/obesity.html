@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Obesity Type Predictor</title>
+	   
+      <style>
+         /* CSS for the header */
+         .header {
+            background-color: #be9a9a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+         }
+
+         /* CSS for the footer */
+         .footer {
+            background-color: #be9a9a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 30;
+            width: 100%;
+         }
+         input[type=number], select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+         }
+/*creating input dimensions*/
+         input[type=submit] {
+            background-color: #be9a9a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+         }
+/*creating hover for submit button and giving dimensions*/
+         input[type=submit]:hover {
+            background-color: #8c6565;
+         }
+         label {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+            padding-right: 20px;
+         }/*creating the submit button*/
+         button[type="submit"] {
+            background-color: #be9a9a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+         }
+/*creating hover for submit button and giving dimensions*/
+         button[type="submit"]:hover {
+            background-color: #766060;
+         }
+
+         .column {
+            float: left;
+            padding: 10px;
+         }
+
+         .radio-column {
+            width: 30%;
+         }
+
+         .figure-column {
+            width: 70%;
+            
+         }
+         /* Clear floats after the columns */
+         .row:after {
+            content: "";
+            display: table;
+            clear: both;
+         }
+         .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+         }
+      </style>
+   
+   </head>
+   <body>
+      <!-- Header section -->
+        <div class="header">
+         <h1>FLAB OR FAB ?</h1>
+        </div> <br>
+
+        <div style="text-align: right;">
+         <form action="/analyze" method="GET">
+            <br>
+            <button style="background-color: green;" type="submit">Back</button>
+         </form>
+        </div>
+        <div style="text-align: center; color: #be9a9a;"><h1>Select different factors to see how they affect Obesity Levels</h1></div>
+        
+        <div class="row">
+            <div class="column radio-column">
+                <form action="/obesity" method="POST">
+                    <input type="radio" name="option" value="obesity"> Obesity Types<br>
+                    <input type="radio" name="option" value="Age"> Age <br>
+                    <input type="radio" name="option" value="Height"> Height<br>
+                    <input type="radio" name="option" value="Weight"> Weight<br>
+                    <input type="radio" name="option" value="FHO"> Family history with overweight<br>
+                    <input type="radio" name="option" value="FAVC"> Frequency of consuming high caloric food<br>
+                    <input type="radio" name="option" value="FCVC"> Frequency of consuming vegetables<br>
+                    <input type="radio" name="option" value="NCP"> Number of main meals<br>
+                    <input type="radio" name="option" value="CAEC"> Consumption of food between meals<br>
+                    <input type="radio" name="option" value="SMOKE"> Smoking habit<br>
+                    <input type="radio" name="option" value="CH2O"> Daily water intake<br>
+                    <input type="radio" name="option" value="SCC"> Calories monitoring<br>
+                    <input type="radio" name="option" value="FAF"> Physical activity frequency<br>
+                    <input type="radio" name="option" value="TUE"> Time spent using technology devices<br>
+                    <input type="radio" name="option" value="CALC"> Consumption of alcohol<br>
+                    <input type="radio" name="option" value="MTRANS"> Mode of Transportation<br><br>
+                    <button type="submit">Select</button><br><br>
+                </form>
+            </div>
+            <div class="column figure-column">
+
+                    {{ fig|safe }}
+
+            </div>
+        </div>
+      
+        <div class="footer">
+            <p>@copyright obesity Predictor</p>
+        </div>
+   </body>
+</html>

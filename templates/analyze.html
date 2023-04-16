@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Obesity Type Predictor</title>
+	   
+      <style>
+         /* CSS for the header */
+         .header {
+            background-color: #be9a9a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+         }
+
+         /* CSS for the footer */
+         .footer {
+            background-color: #be9a9a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 30;
+            width: 100%;
+         }
+         input[type=number], select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+         }
+/*creating input dimensions*/
+         input[type=submit] {
+            background-color: #c0a7a7;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+      
+         }
+/*creating the submit button*/
+         input[type=submit]:hover {
+            background-color: #8c6565;
+            
+         }
+         label {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+            padding-right: 20px;
+         }
+         button[type="submit"] {
+            background-color: #ecd3d3;
+            color: #766060;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+         }
+/*creating hover for submit button and giving dimensions*/
+         button[type="submit"]:hover {
+            background-color: #766060;
+            color: #ecd3d3;
+         }
+         .output-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 20px 0;
+         }
+         .column {
+            float: left;
+            padding: 10px;
+         }
+
+         .radio-column {
+            width: 30%;
+         }
+
+         .figure-column {
+            width: 40%;
+            text-align: center;
+
+         }
+         .figure-new-column {
+            width: 30%;
+            text-align: center;
+
+         }
+         /* Clear floats after the columns */
+         .row:after {
+            content: "";
+            display: table;
+            clear: both;
+         }
+         .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+         }
+      </style>
+   
+   </head>
+   <body >
+      <!-- Header section -->
+      <div class="header">
+         <h1>FLAB OR FAB ?</h1>
+      </div> <br>
+     
+      <div style="text-align: right;">
+         <form action="/">
+            <button style="background-color: green; color: #fff;" type="submit">Back</button>
+         </form>
+      </div>
+      <div style="text-align: center; color: #895757;"><h1> Checkout the Global Obesity Indicator ! </h1></div>
+      <div style="text-align: center; color: #a57a7a;"><h4>Obesity is a chronic disease with several causes that leads to excessive body fat accumulation. And obesity is linked to several serious life-threatening diseases like diabetes, hypertension, osteoarthritis, knee pain, hip issues, depression, mental health, and cancer which reduce the life expectancy in humans.</h4></div>
+      
+   <div class="row">
+      <div class="column radio-column">
+
+      <div>
+         <form action="/obesity">
+            <button type="submit">Obesity Factors</button>
+         </form>
+      </div></br>
+      <div>
+         <form action="/highest">
+            <button type="submit">Highest Obesity Countries</button>
+         </form>
+      </div> </br> 
+      <div>
+         <form action="/lowest">
+            <button type="submit">Lowest Obesity Countries</button>
+         </form>
+      </div></br>
+      <div>
+         <form action="/region">
+            <button type="submit">Continental Obesity Indicator</button>
+         </form>
+      </div></br>
+      <div>
+         <form action="/chart" method="GET">
+            <button type="submit">Gender Specific Obesity Indicator</button>
+         </form>
+      </div></br>
+      </div>
+      <div class="column figure-column">
+             {{ fig|safe }}
+     </div>
+
+     <div class="column figure-new-column">
+      <div class="row">{{ high|safe }}</div>
+      <div class="row">{{ low|safe }}</div>
+     </div>
+
+   </div>
+   
+
+   <div class="footer">
+      <p>@copyright obesity Predictor</p>
+   </div>
+</form>
+</body>
+</html>
+

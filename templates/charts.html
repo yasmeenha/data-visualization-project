@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Obesity Type Predictor</title>
+	   
+      <style>
+         /* CSS for the header */
+         /*specifying background color*/
+                  .header {
+            background-color: #be9a9a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+         }
+
+         /* CSS for the footer */
+         .footer {
+            background-color: #be9a9a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 30;
+            width: 100%;
+         }
+         input[type=number], select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+         }
+/*creating input dimensions*/
+         input[type=submit] {
+            background-color: #be9a9a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+         }
+
+         input[type=submit]:hover {
+            background-color: #8c6565;
+         }/*creating label*/
+         label {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+            padding-right: 20px;
+         }/*creating the submit button*/
+         button[type="submit"] {
+            background-color: #be9a9a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+         }
+/*creating hover for submit button and giving dimensions*/
+         button[type="submit"]:hover {
+            background-color: #766060;
+         }
+
+         .column {
+            float: left;
+            padding: 10px;
+         }
+
+         .radio-column {
+            width: 30%;
+         }
+
+         .figure-column {
+            width: 70%;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+            content: "";
+            display: table;
+            clear: both;
+         }
+         .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+         }
+
+      </style>
+   
+   </head>
+   <body>
+      <!-- Header section -->
+        <div class="header">
+         <h1>FLAB OR FAB ?</h1>
+        </div> <br>
+        
+        <div style="text-align: right;">
+         <form action="/analyze" method="GET">
+            <button style="background-color: green;" type="submit">Back</button>
+         </form>
+        </div>
+        <div style="text-align: center; color: #be9a9a;"><h1>Vizualize Global Obesity by Gender</h1></div>
+        <div class="row">
+            <div class="column radio-column">
+                <form action="/chart" method="POST">
+                    <input type="radio" name="gender" value="Both sexes"> World<br>
+                    <input type="radio" name="gender" value="Male"> Male<br>
+                    <input type="radio" name="gender" value="Female"> Female<br>
+                    <button type="submit">Select</button>
+                </form>
+            </div><br>
+            <div class="column figure-column">
+                <div>
+                    {{ fig|safe }}
+                </div>
+            </div>
+        </div><br><br><br>
+     
+        <div class="footer">
+            <p>@copyright obesity Predictor</p>
+        </div>
+   </body>
+</html>
